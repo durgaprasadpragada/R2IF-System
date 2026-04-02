@@ -1,256 +1,178 @@
-# CRIS-LLM Dataset Repository
-## Crypto Regulatory Insight System (CRIS-LLM): Supporting Dataset and Experimental Resources
+# CRIS-datasets
+## Cryptocurrency Regulatory Intelligence System (CRIS): Dataset Repository
 
 This repository contains the datasets used in the research study:
 
-CRIS-LLM (Crypto Regulatory Insight System): An LLM-Driven Computational Framework for Explainable Cryptocurrency Regulatory Risk Intelligence
+**A Transformer Based Statistical System for Regulatory Risk Index Estimation and Forecasting in Cryptocurrency Markets Using Financial Text Data**
 
-The datasets support regulatory text analysis, semantic reasoning, severity scoring, and Regulatory Risk Intelligence Index (R2IF) construction.
+The datasets support regulatory text analysis, semantic classification, severity modeling, and construction of the Regulatory Risk Impact Factor (R2IF).
 
 ---
 
 # Repository Structure
 
-CRIS-LLM-Dataset/
+CRIS-datasets/
 
-│
-
-├── news/
-
-│   ├── cryptonews.csv
-
-│   ├── crypto_regulatory_news.csv
-
-│
-
-├── market/
-
-│   ├── BTC.csv
-
-│   ├── ETH.csv
-
-│   ├── BNB.csv
-
-│   ├── XRP.csv
-
-│   ├── ADA.csv
-
-│   ├── SOL.csv
-
-│   └── other cryptocurrency price files
-
-│
-
-└── README.md
-
+│  
+├── news/  
+│   ├── cryptonews.csv  
+│   ├── crypto_regulatory_news.csv  
+│  
+├── market/  
+│   ├── BTC.csv  
+│   ├── ETH.csv  
+│   ├── BNB.csv  
+│   ├── XRP.csv  
+│   ├── ADA.csv  
+│   ├── SOL.csv  
+│   └── additional cryptocurrency price files  
+│  
+└── README.md  
 
 ---
 
 # Dataset Description
 
-This repository contains two major categories of datasets:
+This repository contains two primary categories of datasets used for regulatory risk modeling and statistical analysis.
 
 ---
 
-# 1. Regulatory and Cryptocurrency News Dataset
+## 1. Regulatory and Cryptocurrency News Dataset
 
-Location:
+**Location:**  
+`news/`
 
-news/
+**Files:**
+- cryptonews.csv  
+- crypto_regulatory_news.csv  
 
-Files:
+These datasets include:
 
-cryptonews.csv
+- Cryptocurrency related news articles  
+- Regulatory announcements  
+- Policy changes and enforcement actions  
+- Government and institutional statements  
 
-crypto_regulatory_news.csv
+**Typical columns:**
+- Date  
+- Title  
+- Content  
+- Source  
+- URL  
 
-These files contain:
+**Usage in system:**
 
-• Cryptocurrency-related news articles  
-• Regulatory announcements  
-• Policy changes  
-• Government regulations  
-• Institutional statements  
-
-Typical columns include:
-
-Date
-
-Title
-
-Content
-
-Source
-
-URL
-
-These datasets are used for:
-
-• Regulatory intent classification  
-• Policy severity estimation  
-• Regulatory signal extraction  
-• Semantic reasoning using LLM  
+- Regulatory intent classification  
+- Semantic feature extraction using transformer models  
+- Regulatory signal detection  
+- Severity score computation  
 
 ---
 
-# 2. Cryptocurrency Market Dataset
+## 2. Cryptocurrency Market Dataset
 
-Location:
+**Location:**  
+`market/`
 
-market/
+**Files:**
+- BTC.csv  
+- ETH.csv  
+- BNB.csv  
+- XRP.csv  
+- ADA.csv  
+- SOL.csv  
+- Additional cryptocurrency price files  
 
-Files:
+**Each file contains:**
 
-BTC.csv
+- Date  
+- Open  
+- High  
+- Low  
+- Close  
+- Volume  
+- Market Capitalization  
 
-ETH.csv
+**Usage in system:**
 
-BNB.csv
-
-XRP.csv
-
-ADA.csv
-
-SOL.csv
-
-and other cryptocurrency price files.
-
-Each file contains:
-
-Date
-
-Open
-
-High
-
-Low
-
-Close
-
-Volume
-
-Market Cap
-
-These datasets are used for:
-
-• Market reaction analysis  
-• Risk index validation  
-• Regulatory impact assessment  
-• Cross-asset comparison  
-
-This enables correlation between regulatory risk and market behavior.
+- Market behavior analysis  
+- Validation of Regulatory Risk Impact Factor  
+- Econometric modeling and correlation analysis  
+- Forecasting and trend evaluation  
 
 ---
 
 # Dataset Sources
 
-These datasets were obtained from publicly available sources, including:
+The datasets are collected from publicly available sources, including:
 
-• Kaggle Cryptocurrency News Dataset
+- Kaggle datasets:
+  - Cryptocurrency Price History  
+  - Crypto News datasets  
 
-https://www.kaggle.com/datasets/sudalairajkumar/cryptocurrencypricehistory
+- CoinMarketCap:
+  - https://coinmarketcap.com/
 
-https://www.kaggle.com/datasets/oliviervha/crypto-news
+- Cryptocurrency news platforms:
+  - CoinDesk  
+  - CoinTelegraph  
+  - CryptoSlate  
+  - Bitcoin Magazine  
 
-https://www.kaggle.com/datasets/headsortails/crypto-news
-
-• CoinMarketCap Historical Price Data
-
-https://coinmarketcap.com/
-
-• Public cryptocurrency regulatory news archives
-
-• Cryptocurrency media platforms such as:
-
-CoinDesk
-
-CoinTelegraph
-
-Bitcoin Magazine
-
-CryptoSlate
+These sources provide comprehensive coverage of regulatory developments and market activity.
 
 ---
 
-# Purpose of Dataset in CRIS-LLM
+# Purpose of Dataset in CRIS System
 
-These datasets are used to support the CRIS-LLM framework for:
+These datasets support the CRIS system for:
 
-• Regulatory event detection
-
-• Regulatory severity scoring
-
-• Regulatory Risk Intelligence Index (R2IF) construction
-
-• Semantic reasoning and regulatory classification
-
-• Temporal regulatory risk analysis
-
-• Cryptocurrency market risk correlation
+- Regulatory signal detection  
+- Transformer based semantic classification  
+- Severity score computation  
+- Construction of Regulatory Risk Impact Factor (R2IF)  
+- Econometric validation and statistical analysis  
+- Time series forecasting of regulatory risk  
 
 ---
 
-# Regulatory Risk Intelligence Index (R2IF)
+# Regulatory Risk Impact Factor (R2IF)
 
-CRIS-LLM processes regulatory news and computes:
+The system processes regulatory text and computes:
 
-Regulatory Severity Score
+Regulatory Severity Score  
+↓  
+Temporal aggregation  
+↓  
+Regulatory Risk Impact Factor (R2IF)
 
-↓
+This index represents the intensity of regulatory pressure in cryptocurrency markets over time.
 
-Aggregates scores across time
-
-↓
-
-Constructs:
-
-R2IF (Regulatory Risk Intelligence Index)
-
-This index represents regulatory pressure in cryptocurrency markets.
-
-Market data is used to validate the alignment between regulatory risk and price behavior.
+Market data is used to validate the statistical relationship between regulatory risk and market behavior.
 
 ---
 
 # Data Characteristics
 
-Dataset type:
+- **Data Type:** Structured and semi structured  
+- **Format:** CSV  
+- **Time Span:** 2014 – 2023  
+- **Domain:** Cryptocurrency regulation and financial markets  
 
-Structured and semi-structured
-
-Data format:
-
-CSV
-
-Time span:
-
-2014 – 2023
-
-Domain:
-
-Cryptocurrency regulation and market data
-
-No personal data is included.
-
-No sensitive data is included.
-
-All data is publicly available.
+No personal or sensitive data is included.  
+All datasets are derived from publicly available sources.
 
 ---
 
 # Reproducibility
 
-This dataset supports reproducibility of the CRIS-LLM framework, including:
+This dataset supports reproducibility of the proposed system, including:
 
-Regulatory classification
-
-Severity scoring
-
-Risk index construction
-
-Performance evaluation
-
-Temporal analysis
+- Regulatory classification  
+- Severity estimation  
+- Risk index construction  
+- Statistical validation  
+- Forecasting experiments  
 
 ---
 
@@ -258,43 +180,28 @@ Temporal analysis
 
 If you use this dataset, please cite:
 
-CRIS-LLM (Crypto Regulatory Insight System):  
-An LLM-Driven Computational Framework for Explainable Cryptocurrency Regulatory Risk Intelligence
+**A Transformer Based Statistical System for Regulatory Risk Index Estimation and Forecasting in Cryptocurrency Markets Using Financial Text Data**
 
 ---
 
 # License
 
-This dataset is provided for research and academic purposes only.
-
-All original dataset rights belong to their respective public sources.
+This dataset is provided for academic and research purposes only.  
+All original data rights belong to their respective sources.
 
 ---
 
 # Contact
 
-For questions regarding this dataset or research:
+**Veerababu Reddy**  
+Department of IT  
+Vignan's Lara Institute of Technology and Science  
+Email: rveerababu_vlits@vignan.ac.in  
 
-1. Veerababu Reddy
-
-Department of Computer Science and Engineering
-Vignan's Lara Institute of Technology and Science,
-Vignan's Foundation for Science, Technology & Research
-
-Guntur, India
-
-Email:
-rveerababu_vlits@vignan.ac.in
-
-2. Pragada Durga Prasad
-
-Department of Master of Computer Applications
-Vignan's Lara Institute of Technology and Science.
-
-Guntur, India
-
-Email:
-durgaprasadpragada90@gmail.com
+**Durga Prasad Pragada**  
+Department of MCA  
+Vignan's Lara Institute of Technology and Science  
+Email: durgaprasadpragada90@gmail.com  
 
 ---
 
