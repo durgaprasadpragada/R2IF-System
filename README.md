@@ -132,37 +132,88 @@ Generates interactive plots:
 
 # Input Data Format
 
-## News Dataset
+# Datasets
 
-Required columns:
+The repository includes sample datasets for testing and demonstration.
 
-* content (or text/title)
-* date
+## News Datasets
 
-Example:
+Location:
 
 ```
-content,date
-government imposes crypto ban,2023-01-01
+datasets/news/
 ```
+
+Files:
+
+```
+crypto_news_sample1.csv
+crypto_news_sample2.csv
+...
+crypto_news_sample10.csv
+```
+
+Each file contains:
+
+* content → news text
+* date → publication date
+
+These datasets represent different regulatory scenarios such as:
+
+* strict regulations
+* positive adoption
+* market crashes
+* recovery phases
+* mixed signals
 
 ---
 
-## Market Dataset
+## Market Datasets
 
-Required columns:
+Location:
+
+```
+datasets/market/
+```
+
+Files:
+
+```
+crypto_price_sample1.csv
+crypto_price_sample2.csv
+...
+crypto_price_sample10.csv
+```
+
+Each file contains:
 
 * date
-* price (or close)
+* price
 
-Example:
-
-```
-date,price
-2023-01-01,42000
-```
+These datasets simulate corresponding market behavior for each regulatory scenario.
 
 ---
+
+## Usage
+
+You can:
+
+1. Upload any pair of:
+
+   * news file
+   * price file
+
+2. Or use manual input in the UI
+
+Each dataset pair produces different:
+
+* severity scores
+* risk index (R2IF)
+* statistical results
+* forecast trends
+
+This ensures the system remains fully dynamic and data-driven.
+
 
 # How to Run the Project
 
