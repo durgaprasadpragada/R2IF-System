@@ -297,6 +297,19 @@ Includes:
 * Larger datasets improve statistical accuracy
 
 ---
+## Project Demo
+
+Watch the full system demonstration:
+
+[https://drive.google.com/file/d/1e4Pe0VueOpvJuhX4JJK3gWmkE_z4FQok/view?usp=sharing]
+
+The video shows:
+
+Data input process
+Model execution
+Risk computation
+Forecast generation
+Interactive visualization
 
 # License
 
@@ -310,6 +323,10 @@ Durga Prasad Pragada
 Department of MCA
 
 Veerababu Reddy
+Department of IT
+Department of CSE
+
+Venkata Sai Teja Vadalasetty
 Department of IT
 
 ---
