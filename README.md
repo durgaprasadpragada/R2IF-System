@@ -1,208 +1,266 @@
-# CRIS-datasets
-## Cryptocurrency Regulatory Intelligence System (CRIS): Dataset Repository
+# R2IF System
 
-This repository contains the datasets used in the research study:
+## Regulatory Risk Index Estimation and Forecasting in Cryptocurrency Markets
 
-**A Transformer Based Statistical System for Regulatory Risk Index Estimation and Forecasting in Cryptocurrency Markets Using Financial Text Data**
+This repository contains a complete implementation of a data-driven system for analyzing regulatory risk in cryptocurrency markets using financial text data and time-series modeling.
 
-The datasets support regulatory text analysis, semantic classification, severity modeling, and construction of the Regulatory Risk Impact Factor (R2IF).
-
----
-
-# Repository Structure
-
-CRIS-datasets/
-
-│  
-├── news/  
-│   ├── cryptonews.csv  
-│   ├── crypto_regulatory_news.csv  
-│  
-├── market/  
-│   ├── BTC.csv  
-│   ├── ETH.csv  
-│   ├── BNB.csv  
-│   ├── XRP.csv  
-│   ├── ADA.csv  
-│   ├── SOL.csv  
-│   └── additional cryptocurrency price files  
-│  
-└── README.md  
+The system processes regulatory news, computes severity scores, constructs a risk index, and performs statistical forecasting.
 
 ---
 
-# Dataset Description
+# Overview
 
-This repository contains two primary categories of datasets used for regulatory risk modeling and statistical analysis.
+The system follows a structured analytical pipeline:
 
----
+User Input → Text Processing → NLP Classification → Severity Scoring → Risk Index (R2IF) → Statistical Analysis → Forecasting
 
-## 1. Regulatory and Cryptocurrency News Dataset
-
-**Location:**  
-`news/`
-
-**Files:**
-- cryptonews.csv  
-- crypto_regulatory_news.csv  
-
-These datasets include:
-
-- Cryptocurrency related news articles  
-- Regulatory announcements  
-- Policy changes and enforcement actions  
-- Government and institutional statements  
-
-**Typical columns:**
-- Date  
-- Title  
-- Content  
-- Source  
-- URL  
-
-**Usage in system:**
-
-- Regulatory intent classification  
-- Semantic feature extraction using transformer models  
-- Regulatory signal detection  
-- Severity score computation  
+All outputs are dynamically generated based on the input data provided by the user.
 
 ---
 
-## 2. Cryptocurrency Market Dataset
+# Project Structure
 
-**Location:**  
-`market/`
+```
+R2IF-System/
 
-**Files:**
-- BTC.csv  
-- ETH.csv  
-- BNB.csv  
-- XRP.csv  
-- ADA.csv  
-- SOL.csv  
-- Additional cryptocurrency price files  
-
-**Each file contains:**
-
-- Date  
-- Open  
-- High  
-- Low  
-- Close  
-- Volume  
-- Market Capitalization  
-
-**Usage in system:**
-
-- Market behavior analysis  
-- Validation of Regulatory Risk Impact Factor  
-- Econometric modeling and correlation analysis  
-- Forecasting and trend evaluation  
+app/            → Core application logic  
+datasets/       → Input datasets (user-provided or sample)  
+outputs/        → Generated results  
+```
 
 ---
 
-# Dataset Sources
+# Core Modules
 
-The datasets are collected from publicly available sources, including:
+### main.py
 
-- Kaggle datasets:
-  - Cryptocurrency Price History  
-  - Crypto News datasets  
+Controls the full pipeline:
 
-- CoinMarketCap:
-  - https://coinmarketcap.com/
-
-- Cryptocurrency news platforms:
-  - CoinDesk  
-  - CoinTelegraph  
-  - CryptoSlate  
-  - Bitcoin Magazine  
-
-These sources provide comprehensive coverage of regulatory developments and market activity.
+* Accepts input data
+* Executes preprocessing, NLP, severity scoring
+* Computes risk index
+* Runs statistical models
 
 ---
 
-# Purpose of Dataset in CRIS System
+### ui.py
 
-These datasets support the CRIS system for:
+Streamlit-based interactive dashboard:
 
-- Regulatory signal detection  
-- Transformer based semantic classification  
-- Severity score computation  
-- Construction of Regulatory Risk Impact Factor (R2IF)  
-- Econometric validation and statistical analysis  
-- Time series forecasting of regulatory risk  
+* Accepts user input (file upload or manual)
+* Displays metrics and results
+* Triggers analysis and prediction
+* Shows interactive visualizations
 
 ---
 
-# Regulatory Risk Impact Factor (R2IF)
+### data_loader.py
 
-The system processes regulatory text and computes:
+Handles:
 
-Regulatory Severity Score  
-↓  
-Temporal aggregation  
-↓  
-Regulatory Risk Impact Factor (R2IF)
-
-This index represents the intensity of regulatory pressure in cryptocurrency markets over time.
-
-Market data is used to validate the statistical relationship between regulatory risk and market behavior.
+* File uploads
+* Column detection and mapping
+* Data validation
 
 ---
 
-# Data Characteristics
+### preprocessing.py
 
-- **Data Type:** Structured and semi structured  
-- **Format:** CSV  
-- **Time Span:** 2014 – 2023  
-- **Domain:** Cryptocurrency regulation and financial markets  
+Performs:
 
-No personal or sensitive data is included.  
-All datasets are derived from publicly available sources.
+* Text normalization
+* Cleaning and formatting
 
 ---
 
-# Reproducibility
+### nlp_model.py
 
-This dataset supports reproducibility of the proposed system, including:
+Implements:
 
-- Regulatory classification  
-- Severity estimation  
-- Risk index construction  
-- Statistical validation  
-- Forecasting experiments  
+* Financial sentiment analysis using FinBERT
+* Outputs:
+
+  * Sentiment label
+  * Confidence score
 
 ---
 
-# Citation
+### severity_model.py
 
-If you use this dataset, please cite:
+Computes regulatory severity using:
 
-**A Transformer Based Statistical System for Regulatory Risk Index Estimation and Forecasting in Cryptocurrency Markets Using Financial Text Data**
+S = (W + P + C + L) / 4
+
+Where:
+
+* W = country/regional signals
+* P = policy/regulation keywords
+* C = coverage/impact scope
+* L = NLP model confidence
+
+---
+
+### risk_index.py
+
+Constructs the Regulatory Risk Index (R2IF):
+
+* Aggregates severity scores by date
+* Produces time-series representation
+
+---
+
+### econometrics.py
+
+Performs statistical analysis:
+
+* ADF Test
+* Linear Regression
+* Granger Causality
+* ARIMA Forecasting
+
+---
+
+### visualization.py
+
+Generates interactive plots:
+
+* Risk index trends
+* Price vs severity relationship
+* Forecast visualization
+
+---
+
+# Input Data Format
+
+## News Dataset
+
+Required columns:
+
+* content (or text/title)
+* date
+
+Example:
+
+```
+content,date
+government imposes crypto ban,2023-01-01
+```
+
+---
+
+## Market Dataset
+
+Required columns:
+
+* date
+* price (or close)
+
+Example:
+
+```
+date,price
+2023-01-01,42000
+```
+
+---
+
+# How to Run the Project
+
+## Step 1: Install dependencies
+
+```
+pip install -r requirements.txt
+```
+
+---
+
+## Step 2: Run the application
+
+```
+streamlit run app/ui.py
+```
+
+---
+
+## Step 3: Use the interface
+
+1. Upload:
+
+   * News dataset
+   * Price dataset
+     OR
+     Enter manual input
+
+2. Click:
+
+   * Run Analysis
+
+3. View:
+
+   * Metrics
+   * Severity scores
+   * Risk index
+
+4. Click:
+
+   * Run Prediction
+
+5. View:
+
+   * Forecast graphs
+
+---
+
+# Outputs
+
+Generated files are stored in:
+
+```
+outputs/
+```
+
+Includes:
+
+* classified_news.csv
+* severity_scores.csv
+* r2if_timeseries.csv
+
+---
+
+# Features
+
+* Fully dynamic input-driven system
+* Transformer-based NLP classification
+* Regulatory severity modeling
+* Time-series risk index construction
+* Econometric validation
+* Forecasting using ARIMA
+* Interactive visualization dashboard
+
+---
+
+# Notes
+
+* The system works for both single input and batch datasets
+* Results vary based on input data
+* Larger datasets improve statistical accuracy
 
 ---
 
 # License
 
-This dataset is provided for academic and research purposes only.  
-All original data rights belong to their respective sources.
+This project is intended for academic and research purposes.
 
 ---
 
-# Contact
+# Authors
 
-**Veerababu Reddy**  
-Department of IT  
-Vignan's Lara Institute of Technology and Science  
-Email: rveerababu_vlits@vignan.ac.in  
+Durga Prasad Pragada
+Department of MCA
 
-**Durga Prasad Pragada**  
-Department of MCA  
-Vignan's Lara Institute of Technology and Science  
-Email: durgaprasadpragada90@gmail.com  
+Veerababu Reddy
+Department of IT
 
 ---
 
-# End of README
+# End
